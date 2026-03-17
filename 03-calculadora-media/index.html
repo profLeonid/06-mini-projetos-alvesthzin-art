@@ -22,17 +22,17 @@
       <p class="descricao">Digite as três notas para calcular a situação do aluno.</p>
 
       <label>Nota 1</label>
-      <input type="number" placeholder="0 a 10" />
+      <input id="nota1" type="number" placeholder="0 a 10" min="0" max="10" />
 
       <label>Nota 2</label>
-      <input type="number" placeholder="0 a 10" />
+      <input id="nota2" type="number" placeholder="0 a 10" min="0" max="10" />
 
       <label>Nota 3</label>
-      <input type="number" placeholder="0 a 10" />
+      <input id="nota3" type="number" placeholder="0 a 10" min="0" max="10" />
 
-      <button onclick="calcularMedia()">Calcular Média</button>
+      <button onclick="handleClick()">Calcular Média</button>
 
-      <div class="resultado">
+      <div id="resultado" class="resultado">
         O resultado aparecerá aqui
       </div>
 
@@ -42,6 +42,8 @@
   <footer>
     <p>Prof. Fernando Leonid</p>
   </footer>
+
+  <script src="app.js"></script>
 
 </body>
 

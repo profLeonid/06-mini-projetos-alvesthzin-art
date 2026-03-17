@@ -76,6 +76,12 @@ input {
   border: 1px solid #374151;
   outline: none;
   transition: border-color 0.2s;
+  -moz-appearance: textfield;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 input:focus {
@@ -100,8 +106,13 @@ button:hover {
   background-color: #fde047;
 }
 
+button:active {
+  transform: scale(0.98);
+}
+
 .resultado {
   display: flex;
+  flex-direction: column;
   min-height: 6rem;
   padding: 1.5rem;
   text-align: center;
@@ -109,7 +120,73 @@ button:hover {
   border: 1px solid #374151;
   align-items: center;
   justify-content: center;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
+
+.resultado div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.resultado-nome {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+}
+
+.resultado-imc {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.resultado-classificacao {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Cores por classificação */
+.resultado.abaixo-peso {
+  border: 2px solid #1e3a5f;
+  box-shadow: 0 0 0 1px #1e3a5f;
+}
+.resultado.abaixo-peso .resultado-classificacao { color: #60a5fa; }
+
+.resultado.peso-normal {
+  border: 2px solid #14532d;
+  box-shadow: 0 0 0 1px #14532d;
+}
+.resultado.peso-normal .resultado-classificacao { color: #4ade80; }
+
+.resultado.sobrepeso {
+  border: 2px solid #713f12;
+  box-shadow: 0 0 0 1px #713f12;
+}
+.resultado.sobrepeso .resultado-classificacao { color: #fbbf24; }
+
+.resultado.obesidade-1 {
+  border: 2px solid #7f1d1d;
+  box-shadow: 0 0 0 1px #7f1d1d;
+}
+.resultado.obesidade-1 .resultado-classificacao { color: #f87171; }
+
+.resultado.obesidade-2 {
+  border: 2px solid #6b0f0f;
+  box-shadow: 0 0 0 1px #6b0f0f;
+}
+.resultado.obesidade-2 .resultado-classificacao { color: #fca5a5; }
+
+.resultado.obesidade-3 {
+  border: 2px solid #450a0a;
+  box-shadow: 0 0 0 1px #450a0a;
+}
+.resultado.obesidade-3 .resultado-classificacao { color: #fecaca; }
 
 footer {
   display: flex;

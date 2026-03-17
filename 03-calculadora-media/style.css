@@ -76,6 +76,12 @@ input {
   border: 1px solid #374151;
   outline: none;
   transition: border-color 0.2s;
+  -moz-appearance: textfield;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 input:focus {
@@ -100,8 +106,14 @@ button:hover {
   background-color: #fde047;
 }
 
+button:active {
+  transform: scale(0.98);
+}
+
 .resultado {
   display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
   min-height: 6rem;
   padding: 1.5rem;
   text-align: center;
@@ -109,6 +121,48 @@ button:hover {
   border: 1px solid #374151;
   align-items: center;
   justify-content: center;
+ 
+}
+
+.resultado .media-valor {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.resultado .situacao {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.resultado.aprovado {
+  border: 2px solid #14532d;
+  box-shadow: 0 0 0 1px #14532d;
+}
+
+.resultado.aprovado .situacao {
+  color: #4ade80;
+}
+
+.resultado.recuperacao {
+  border: 2px solid #713f12;
+  box-shadow: 0 0 0 1px #713f12;
+}
+
+.resultado.recuperacao .situacao {
+  color: #fbbf24;
+}
+
+.resultado.reprovado {
+  border: 2px solid #7f1d1d;
+  box-shadow: 0 0 0 1px #7f1d1d;
+}
+
+.resultado.reprovado .situacao {
+  color: #f87171;
 }
 
 footer {
